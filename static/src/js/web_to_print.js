@@ -33,6 +33,7 @@ export const webToPrint = {
 
 			$('#customize-link').click(ev => {
 				var pid = $(ev.currentTarget).closest('form').find('input[name="product_id"]').val();
+				console.log("PID:", pid)
 				window.location.href = '/custom/design/' + pid.toString();
 			});
 
@@ -220,27 +221,31 @@ export const webToPrint = {
 				$('#generate-rows-btn').click(function () {
 					var numRows = parseInt($('#num-rows-input').val());
 					var dynamicRowsContainer = $('#dynamic-rows-container');
-	
+				
 					dynamicRowsContainer.empty(); // Clear previous rows
-	
+				
 					for (var i = 0; i < numRows; i++) {
 						var row = $('<div class="row"></div>');
-	
-						var nameInputColumn = $('<div class="col-md-6 mb-2"></div>');
-						var jerseyInputColumn = $('<div class="col-md-6 mb-2"></div>');
-	
+				
+						var nameInputColumn = $('<div class="col-md-4 mb-2"></div>');
+						var jerseyInputColumn = $('<div class="col-md-4 mb-2"></div>');
+						var sizeInputColumn = $('<div class="col-md-4 mb-2"></div>');
+				
 						var nameInput = $('<input type="text" class="form-control" placeholder="Enter name" name="name[]">');
 						var jerseyInput = $('<input type="number" class="form-control" placeholder="Enter jersey number" name="jersey_number[]">');
-	
+						var sizeSelect = $('<select class="form-control" name="size[]"><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option></select>');
+				
 						nameInputColumn.append(nameInput);
 						jerseyInputColumn.append(jerseyInput);
-	
+						sizeInputColumn.append(sizeSelect);
+				
 						row.append(nameInputColumn);
 						row.append(jerseyInputColumn);
-	
+						row.append(sizeInputColumn);
+				
 						dynamicRowsContainer.append(row);
 					}
-				});
+				});				
 
 				var textCounter = 0;
 

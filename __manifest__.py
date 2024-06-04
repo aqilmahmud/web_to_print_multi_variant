@@ -41,7 +41,8 @@
         'views/report.xml',
         'views/sale_views.xml',
         'views/product_template.xml',
-        'views/templates.xml'
+        'views/templates.xml',
+        'views/website_multi_variant_templates.xml'
     ],
     'demo': [
         'demo/demo.xml'

@@ -4,4 +4,4 @@
 # See LICENSE file for full copyright and licensing details.
 # License URL : <https://store.webkul.com/license.html/>
 ##############################################################################
-from . import main
+from . import main, website_multi_variant
