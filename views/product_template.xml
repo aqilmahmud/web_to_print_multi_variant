@@ -38,10 +38,16 @@
                         <div>
                             <field name="provide_image"/>
                             <label for="provide_image"/>
+                            <field name="image_charge"/>
                         </div>
                         <div>
                             <field name="provide_text"/>
                             <label for="provide_text"/>
+                            <field name="text_charge"/>
+                        </div>
+                        <div>
+                            <field name="provide_team_members"/>
+                            <label for="provide_team_members"/>
                         </div>
                     </div>
                         <notebook string="Define Area">
@@ -72,7 +78,10 @@
                     <field name="sequence" widget="handle" />
                     <field name="name" />
                     <field name="provide_text"/>
+                    <field name="text_charge"/>
                     <field name="provide_image"/>
+                    <field name="image_charge"/>
+                    <field name="provide_team_members"/>
                 </tree>
             </field>
         </record>

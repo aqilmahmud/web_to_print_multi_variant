@@ -58,6 +58,7 @@ class ProductDimension(models.Model):
     name = fields.Char(required=True)
     provide_image = fields.Boolean(string='Provide Image', default=True)
     provide_text = fields.Boolean(string='Provide Text', default=True)
+    provide_team_members = fields.Boolean(string='Provide Team Members', default=True)
     width = fields.Char()
     height = fields.Char()
     top = fields.Char()
@@ -66,6 +67,8 @@ class ProductDimension(models.Model):
     sequence = fields.Integer()
     product_id = fields.Many2one('product.template')
     note = fields.Text()
+    image_charge = fields.Float("Extra charge for image")
+    text_charge = fields.Float("Extra charge for text")
 
     @api.model
     def create(self,vals):

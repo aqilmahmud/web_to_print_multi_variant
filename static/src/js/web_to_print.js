@@ -218,7 +218,7 @@ export const webToPrint = {
 					};
 				}
 
-				$('#generate-rows-btn').click(function () {
+				$('#generate-players-btn').click(function () {
 					var numRows = parseInt($('#num-rows-input').val());
 					var dynamicRowsContainer = $('#dynamic-rows-container');
 				

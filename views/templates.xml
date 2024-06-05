@@ -170,11 +170,9 @@
                                 <div role="tabpanel" t-attf-id="area_{{area.id}}" t-att-class="'tab-pane editor active' if area.sequence == active_area else 'tab-pane editor'">
                                     <div id="accordion">
                                         <div class="tab-content text-center">
-                                            <t t-foreach="product.custom_area_ids" t-as="area">
-                                                <div style="font-size: 1.2em; margin-bottom: 10px;">
-                                                    Total Price = <strong><t t-esc="area.product_id.list_price"/></strong>
-                                                </div>
-                                            </t>
+                                            <div style="font-size: 1.2em; margin-bottom: 10px;">
+                                                Total Price = <strong><t t-esc="area.product_id.list_price"/></strong>
+                                            </div>
                                         </div>
                                         <div t-if="area.provide_text" style="overflow:inherit;" class="card">
                                             <div class="card-header pt0 pb0" id="textarea">
@@ -183,7 +181,7 @@
                                                         <img class="mr8" src="/web_to_print/static/img/text.png" alt=""/>
                                                         Text <i style="font-size:large;" class="mt4 fa fa-caret-down pull-right"></i>
                                                     </button>
-                                                    <p style="float: right; margin-top: 10px; margin-bottom: 0;">+ 10$</p>
+                                                    <p style="float: right; margin-top: 10px; margin-bottom: 0;">+ <t t-esc="area.text_charge"/>$</p>
                                                 </h5>
                                             </div>
 
@@ -247,7 +245,7 @@
                                                         <img class="mr8" src="/web_to_print/static/img/img.png" alt=""/>
                                                             Image<i style="font-size:large;" class="mt4 fa fa-caret-down pull-right"></i>
                                                     </button>
-                                                    <p style="float: right; margin-top: 10px; margin-bottom: 0;">+ 20$</p>
+                                                    <p style="float: right; margin-top: 10px; margin-bottom: 0;">+ <t t-esc="area.image_charge"/>$</p>
                                                 </h5>
                                             </div>
                                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
@@ -269,7 +267,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div t-if="area.provide_image" style="overflow:inherit;" class="card">
+                                        <div t-if="area.provide_team_members" style="overflow:inherit;" class="card">
                                             <div class="card-header pt0 pb0" id="headingTwo">
                                                 <h5 class="mb-0">
                                                     <button style="color:black;" class="text-left btn btn-block btn-link collapsed font-weight-bold" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -283,8 +281,8 @@
                                                 <div class="card-body">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <input type="number" id="num-rows-input" placeholder="Enter number of rows" min="1" class="form-control mb-2"/>
-                                                            <button type="button" id="generate-rows-btn" class="btn btn-primary mb-2">Generate Players</button>
+                                                            <input type="number" id="num-rows-input" placeholder="Enter the number of players" min="1" class="form-control mb-2"/>
+                                                            <button type="button" id="generate-players-btn" class="btn btn-primary mb-2">Generate Players</button>
                                                             <div id="dynamic-rows-container"></div>
                                                         </div>
                                                     </div>
